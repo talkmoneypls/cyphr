@@ -446,6 +446,56 @@ a {
   font-style: italic;
 }
 
+.section-note {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  line-height: 1.7;
+  margin-top: 2rem;
+}
+
+.section-closer {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 2.5rem;
+  letter-spacing: 0.05em;
+  font-style: italic;
+}
+
+/* Burger Menu */
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 101;
+}
+
+.burger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.burger-line.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-line.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* ========================================
    OFFER / HOW IT WORKS
    ======================================== */
@@ -896,6 +946,15 @@ a {
   margin-bottom: 1.5rem;
 }
 
+.close-sub {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
 .close-note {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -963,8 +1022,32 @@ a {
    ======================================== */
 
 @media (max-width: 768px) {
+  .nav-burger {
+    display: flex;
+  }
+
   .nav-links {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(5, 5, 5, 0.98);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 100;
+  }
+
+  .nav-links.nav-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem !important;
+    color: var(--text-primary) !important;
   }
 
   .hero {
