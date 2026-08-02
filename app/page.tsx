@@ -64,7 +64,7 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="nav-logo">
-        CYPH<span>R</span>
+        CYPHR
       </div>
       <button className="nav-burger" onClick={() => setOpen(!open)} aria-label="Menu">
         <span className={`burger-line ${open ? 'open' : ''}`} />
@@ -286,7 +286,10 @@ function SystemBlock({ tag, title, desc, features }: { tag: string; title: strin
           <h3>{title}</h3>
           <p>{desc}</p>
         </div>
-        <div className={`system-toggle ${open ? 'open' : ''}`}>+</div>
+        <div className="system-toggle-wrap">
+          <div className={`system-toggle-icon ${open ? 'open' : ''}`}>+</div>
+          <span className={`system-toggle-hint ${open ? 'open' : ''}`}>expand</span>
+        </div>
       </div>
       <div className={`system-body ${open ? 'open' : ''}`}>
         <div className="system-features">
